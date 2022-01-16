@@ -10,5 +10,4 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 USER gitpod
-RUN python3 -m venv /workspace/gitpodissue/venv && \
-    echo "source /workspace/gitpodissue/venv/bin/activate" >> /home/gitpod/.bashrc
+RUN echo "{ [ -f /workspace/gitpodissue/venv/bin/activate ] && source /workspace/gitpodissue/venv/bin/activate ;} || :" >> /home/gitpod/.bashrc
